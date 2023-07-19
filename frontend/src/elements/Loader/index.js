@@ -79,14 +79,8 @@ export default function Loader() {
     const classes = useStyles();
 
     return (
-        <div
-          container
-          className={classes.block}
-          direction="column"
-          justifyContent="center"
-          alignItems="center"
-        >
-          <div class={classes.lds_ellipsis}>
+        <div className={classes.block}>
+          <div className={classes.lds_ellipsis}>
             <div /><div /><div /><div />
           </div>
         </div>
