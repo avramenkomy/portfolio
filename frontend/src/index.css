@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&family=Fira+Mono:wght@400;500;700&family=Roboto+Mono:wght@100;200;300;400;500;600;700&display=swap');
+
+:root[data-theme="light"] {
+  --background-color: #e7e7e7;
+  --sb-color: #c4c1c1;
+  --primary: #0b0c10;
+  --primary2: #1f2833;
+  --secondary: #45a29e;
+  --secondary2: #66fcf1;
+  --contrast-text: #0b0c10;
+
+  --neumorphism_shadow: -4px -4px 4px white,
+                          4px 4px 4px rgba(0,0,0,.3);
+
+  --neumorphism_shadow_pressed: inset 4px 4px 4px rgba(0,0,0,.3),
+                                inset -4px -4px 4px white;
+}
+
+:root[data-theme="dark"] {
+  --background-color: #15171f;
+  --sb-color: #262934;
+  --primary: #66fcf1;
+  --primary2: #45a29e;
+  --secondary: #c5c6c7;
+  --secondary2: #727477;
+  --contrast-text: #c5c6c7;
+
+  --neumorphism_shadow: -5px -5px 10px #000000,
+                          5px 5px 10px #242735;
+
+  --neumorphism_shadow_pressed: inset 5px 5px 10px #040506,
+                                inset -5px -5px 10px #12131a;
+}
+
+:root {
+  --white: #faebd7;
+  --dark: #1e1e1e;
+  --navy: #0B192F;
+  --warning: #ffe400;
+  --error: #f13f20;
+  --success: #61892f;
+  --orange: #e88001;
+  --green: #2e9f4a;
+  --yellow: #ffe400;
+  --red: #fd4c40;
+  --blue: #027BFF;
+  --azur: #64ffda;
+
+  --fz-xs: 5px;
+  --fz-sm: 10px;
+  --fz-md: 17px;
+  --fz-lg: 24px; 
+  --fz-xl: 35px;
+  --fz-xxl: 50px;
+
+  --font-mono: 'SF Mono', 'Fira Code', 'Fira Mono', 'Roboto Mono', monospace;
+  --font-link: 'Calibre', 'Fira Sans', 'Helvetica', sans-serif;
+}
+
+body {
+  margin: 0;
+  background: var(--background-color);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  /* -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; */
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  margin: 0 auto;
+  width: 90vw;
+  max-width: 1000px;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+.active-link {
+  cursor: default !important;
+  color: var(--primary) !important;
+  border: 1px solid var(--primary) !important;
+  border-radius: 5px !important;
+}
+
+.neumorphism_button {
+  min-width: 120px;
+  background: none;
+  box-shadow: var(--neumorphism_shadow);
+  height: 40px;
+  border: none;
+  border-radius: 15px;
+  color: var(--primary);
+  font-family: var(--font-mono);
+  font-weight: 100;
+  font-size: 1rem;
+  letter-spacing: 0.2rem;
+}
+
+.neumorphism_button:hover {
+  cursor: pointer;
+}
+
+.neumorphism_button:active {
+  box-shadow: var(--neumorphism_shadow_pressed);
+}
+
+@media (max-width: 620px) {
+  .neumorphism_button {
+    letter-spacing: inherit;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 520px) {
+  .neumorphism_button {
+    letter-spacing: inherit;
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 420px) {
+  .neumorphism_button {
+    letter-spacing: inherit;
+    font-size: 0.7rem;
+  }
+}
