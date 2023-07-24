@@ -14,6 +14,7 @@ const useStyles = createUseStyles({
     flexWrap: 'nowrap',
     alignItems: 'center',
     '@media (max-width: 670px)': {
+      alignItems: 'center',
       flexDirection: 'column-reverse',
     }
   },
@@ -35,6 +36,13 @@ const useStyles = createUseStyles({
     },
     '@media (max-width: 670px)': {
       fontSize: '30px',
+      textAlign: 'center',
+    }
+  },
+  occupation: {
+    fontSize: '0.5em',
+    '@media (max-width: 670px)': {
+      fontSize: '0.75em',
     }
   },
   name: {
@@ -56,20 +64,30 @@ const useStyles = createUseStyles({
     borderRadius: '50%',
   },
   introduce: {
+    '& :nth-child(1)': {
+      fontStyle: 'italic',
+      fontSize: '1.75rem',
+    },
     '& p': {
       marginTop: '50px',
-      marginBottom: '100px',
-      fontFamily: 'Calibre',
-      fontSize: '1.75rem',
-      fontStyle: 'italic',
+      fontFamily: 'var(--font-mono)',
+      fontSize: '1.5rem',
       fontWeight: '300',
+      textAlign: 'justify',
       color: 'var(--contrast-text)',
+      '& > a': {
+        textDecoration: 'underline',
+        fontSize: '1em !important',
+        fontStyle: 'normal !important',
+      },
+      '& > a:visited': {
+        color: 'var(--contrast-text)',
+      },
       '@media (max-width: 950px)': {
         fontSize: '1.75rem',
       },
       '@media (max-width: 810px)': {
         fontSize: '1.45rem',
-        textAlign: 'center',
         fontWeight: '400',
         width: 'auto',
       },
@@ -101,6 +119,12 @@ const useStyles = createUseStyles({
         color: 'inherit',
       },
     },
+  },
+  scroll_to_bottom: {
+    textDecoration: 'underline',
+    cursor: 'pointer',
+    fontSize: 'inherit !important',
+    fontStyle: 'normal !important'
   }
 });
 
@@ -108,11 +132,16 @@ const useStyles = createUseStyles({
 function Home() {
   const classes = useStyles();
 
+  const scrollToBottom = () => {
+    window.scrollTo(0, document.body.scrollHeight);
+  }
+
   return (
     <div className={classes.root}>
       <div className={classes.title__container}>
         <h1 className={classes.h1_title}>
-          Hello, I'm <span className={classes.name}>Mike</span>.
+          Привет, я&nbsp;<span className={classes.name}>Михаил</span>.<br />
+          <span className={classes.occupation}>Frontend developer</span>
         </h1>
         <div className={classes.photo__container}>
           <img className={classes.photo_mock} src={usersPhotoMock} alt="my_photo"/>
@@ -120,26 +149,50 @@ function Home() {
       </div>
       <div className={classes.introduce}>
         <p>
-          I'm a self-taught front-end developer, working at OCRV. I like working on the front-end of the web. 
-          This is my website, here I share information that I found on the Internet, 
-          various solutions for the frontend and pet-projects created.
+          Я работаю в компании ООО "ОЦРВ" и занимаюсь разработкой интерфейсов
+          для внутренних сервисов ОАО "РЖД".
         </p>
 
-        <div className={classes.links}>
-          {/* <button className="neumorphism_button">
-            <Link to={'/about-me'}>About Me&nbsp;&nbsp;<FontAwesomeIcon icon={faArrowRight} color={'var(--primary)'}/></Link>
-          </button> */}
+        <p>
+          Этот сайт является моей персональной страницей, на которой я поделюсь с вами информацией
+          о своей профессиональной карьере, пет-проектах, хобби и увлечениях и не только.
+        </p>
+        <p>
+          Веб-технологии frontend и backend я изучал самостоятельно по документациям, спецификациям
+          и многочисленным курсам и видеоурокам на всеми известном самом крупном видеохостинге. В процессе
+          изучения много практиковался в написании кода и решении различных задач. Такой подход потратил
+          много времени и усилий с моей стороны, и как мне кажется все было не зря... Более подробно о навыках
+          можно посмотреть на <a href="/skills">странице</a>.
+        </p>
+        {/* <p>
+          Основным моим видом деятельности в настоящее время является frontend-разработка, поэтому я постараюсь
+          максимально четко и понятно раскрыть свои умения и навыки для возможного сотрудничества. Я готов помочь
+          вам создать сайт, который будет соответствовать вашим потребностям и целям. Здесь
+          вы найдете информацию о моих проектах, а так же у вас будет возможность посмотреть блог, в котором
+          я буду по мере возможности выкладывать новости, статьи о том, как тот или иной проект реализовывался.
+        </p>
+        <p>
+          Помимо программирования, также люблю путешествовать и побывал в некоторых интересных местах в России и
+          за ее пределами. Каждая поездка была для меня новым опытом и возможностью узнать что-то новое о культуре
+          и традициях разных народов.
 
-          <Link to={'/about-me'} className="neumorphism_button">About Me&nbsp;&nbsp;<FontAwesomeIcon icon={faArrowRight} color={'var(--primary)'}/></Link>
-          <Link to={'/projects'} className="neumorphism_button">Projects&nbsp;&nbsp;<FontAwesomeIcon icon={faArrowRight} color={'var(--primary)'}/></Link>
-          
-          {/* <button className="neumorphism_button">
-            <Link to={'/blog'}>Blog&nbsp;&nbsp;<FontAwesomeIcon icon={faArrowRight} /></Link>
-          </button> */}
-          {/* <button className="neumorphism_button">
-            <Link to={'/projects'}>Projects&nbsp;&nbsp;<FontAwesomeIcon icon={faArrowRight} color={'var(--primary)'}/></Link>
-          </button> */}
-        </div>
+          Ну и последнее мое хобби - создание электронных устройств. Я люблю работать с микроконтроллерами и
+          создавать различные устройства, которые могут помочь людям в их повседневной жизни.
+        </p>
+        <p>
+          Ну и последнее мое хобби это электротехника и электроника. Работа с электронными компонентами и
+          микроконтроллерами доставляет мне немало удовольствия.
+        </p>*/}
+        <p>
+          Если у вас есть какие-либо вопросы или пожелания, не стесняйтесь&nbsp;
+          <span className={classes.scroll_to_bottom} onClick={ () => {scrollToBottom()}}>обращаться ко мне</span>&nbsp;через
+          форму обратной связи. Я всегда готов помочь и обсудить детали сотрудничества.
+        </p> 
+      </div>
+
+      <div className={classes.links}>
+        <Link to={'/about-me'} className="neumorphism_button">About Me&nbsp;&nbsp;<FontAwesomeIcon icon={faArrowRight} color={'var(--primary)'}/></Link>
+        <Link to={'/projects'} className="neumorphism_button">Projects&nbsp;&nbsp;<FontAwesomeIcon icon={faArrowRight} color={'var(--primary)'}/></Link>
       </div>
     </div>
   )
