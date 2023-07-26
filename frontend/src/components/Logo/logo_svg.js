@@ -2,7 +2,6 @@ import React from 'react';
 import '../../font_good_dog.css';
 
 function Logo(props) {
-  const { width, height } = props;
 
   return (
     <svg
