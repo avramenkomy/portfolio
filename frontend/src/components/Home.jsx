@@ -9,14 +9,27 @@ import usersPhotoMock from '../utils/img/users_photo_mock.jpeg';
 
 const useStyles = createUseStyles({
   title__container: {
+    height: '80vh',
     display: 'flex',
     flexDirection: 'row',
     flexWrap: 'nowrap',
     alignItems: 'center',
+    gap: '10px',
+    '@media (max-width: 1120px)': {
+      gap: '20px',
+    },
     '@media (max-width: 670px)': {
       alignItems: 'center',
       flexDirection: 'column-reverse',
+      height: 'auto',
     }
+  },
+  h1__container: {
+    flexGrow: 1,
+  },
+  short_text: {
+    fontSize: '1.1rem',
+    color: 'var(--contrast-text)',
   },
   h1_title: {
     color: 'var(--primary2)',
@@ -35,7 +48,7 @@ const useStyles = createUseStyles({
       fontSize: '50px',
     },
     '@media (max-width: 670px)': {
-      fontSize: '30px',
+      fontSize: '60px',
       textAlign: 'center',
     }
   },
@@ -51,10 +64,10 @@ const useStyles = createUseStyles({
   photo__container: {
     paddingTop: '20px',
     maxWidth: '200px',
-    width: '20%',
+    width: '25%',
     minWidth: '120px',
     maxHeight: '200px',
-    height: '20%',
+    height: 'auto',
     minHeight: '120px',
     borderRadius: '50%',
   },
@@ -139,10 +152,17 @@ function Home() {
   return (
     <div className={classes.root}>
       <div className={classes.title__container}>
-        <h1 className={classes.h1_title}>
-          Привет, я&nbsp;<span className={classes.name}>Михаил</span>.<br />
-          <span className={classes.occupation}>Frontend developer</span>
-        </h1>
+        <div className={classes.h1__container}>
+          <h1 className={classes.h1_title}>
+            Привет, я&nbsp;<span className={classes.name}>Михаил</span>.<br />
+            <span className={classes.occupation}>Frontend developer</span>
+          </h1>
+          <div className={classes.short_text}>
+            <p>Мне нравится создавать уникальные и функциональные интерфейсы, которые помогают пользователям взаимодействовать с веб-приложениями</p>
+            <p>Я пишу код на JavaScript, а так же имею хорошие базовые знания по backend-разработке</p>
+            <p>На этом сайте Вы сможете узнать обо всем по-подробнее</p>
+          </div>
+        </div>
         <div className={classes.photo__container}>
           <img className={classes.photo_mock} src={usersPhotoMock} alt="my_photo"/>
         </div>
