@@ -1,4 +1,5 @@
 import Card from '@/components/ui/Card';
+import Link from 'next/link';
 
 export default function ProjectCard({ project }) {
   return (
@@ -29,6 +30,13 @@ export default function ProjectCard({ project }) {
         </div>
 
         <div className="mt-8 flex gap-4">
+          <Link
+            href={`/projects/${project.slug}`}
+            className="text-sm font-medium text-blue-400 transition hover:text-blue-300" // FIXME:
+          >
+            Details
+          </Link>
+          
           <a
             href={project.github}
             target="_blank"
