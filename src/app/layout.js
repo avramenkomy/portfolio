@@ -21,7 +21,9 @@ export default function RootLayout({ children }) {
       <body className={`${geist.className} bg-zinc-950 text-zinc-500`}>
         <Header />
 
-        {children}
+        <div className="pt-16">
+          {children}
+        </div>
 
         <Footer />
       </body>

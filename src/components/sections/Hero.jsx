@@ -17,7 +17,7 @@ export default function Hero() {
       <HeroBackground />
 
       <Container>
-        <div className="relative grid items-center gap-16 lg:grid-cols-2">
+        <div className="relative z-10 grid items-center gap-16 lg:grid-cols-2">
           <div>
             <Badge>{profile.role}</Badge>
 
