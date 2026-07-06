@@ -10,16 +10,30 @@ export default function Button(props) {
     secondary: 'border border-zinc-700 hover:bg-zinc-900',
   }
 
+  const buttonClassName = cn(
+    'inline-flex items-center justify-center rounded-lg px-6 py-3',
+    'font-medium transition',
+    variants[variant],
+    className
+  );
+
+  const isExternal = href?.startsWith('http');
+
+  if (isExternal) {
+    return (
+      <a
+        href={href}
+        target="_blank"
+        rel="noreferrer"
+        className={buttonClassName}
+      >
+        {children}
+      </a>
+    )
+  }
+
   return (
-    <Link
-      href={href}
-      className={cn(
-        "inline-flex items-center justify-center rounded-lg px-6 py-3",
-        "font-medium transition",
-        variants[variant],
-        className
-      )}
-    >
+    <Link href={href} className={buttonClassName}>
       {children}
     </Link>
   )
