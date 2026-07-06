@@ -1,7 +1,7 @@
 const navigation = [
   {
     title: 'About',
-    href: '/#about',
+    href: '/about',
   },
   {
     title: 'Stack',
@@ -9,7 +9,7 @@ const navigation = [
   },
   {
     title: 'Projects',
-    href: '/#projects',
+    href: '/projects',
   },
   {
     title: 'Contact',
