@@ -37,6 +37,8 @@
 * Metadata API
 * Динамическое Open Graph изображение
 * Favicon и app icons
+* Sitemap для поисковых систем
+* Robots.txt
 
 ## Структура проекта
 
@@ -174,8 +176,6 @@ export default nextConfig;
 * Добавить блог
 * Добавить MDX
 * Добавить RSS feed
-* Добавить sitemap
-* Добавить robots.txt
 * Задеплоить проект на Vercel
 * Подключить собственный домен
 
@@ -239,6 +239,8 @@ Frontend Developer
 * Metadata API
 * Dynamic Open Graph image
 * App icons and favicon
+* Sitemap
+* Robots.txt
 
 ## Project Structure
 
@@ -376,8 +378,6 @@ During development, this project covers several important Next.js and React conc
 * Add blog
 * Add MDX support
 * Add RSS feed
-* Add sitemap
-* Add robots.txt
 * Deploy to Vercel
 * Connect a custom domain
 

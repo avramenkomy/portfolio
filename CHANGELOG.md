@@ -51,6 +51,8 @@ The project follows a simple Conventional Commits style.
 * Двуязычный README
 * CHANGELOG
 * DEVLOG
+* Sitemap
+* Robots.txt
 
 ### Изменено
 
@@ -121,6 +123,8 @@ The project follows a simple Conventional Commits style.
 * Bilingual README
 * CHANGELOG
 * DEVLOG
+* Sitemap
+* Robots.txt
 
 ### Changed
 
