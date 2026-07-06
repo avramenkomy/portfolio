@@ -39,6 +39,7 @@
 * Favicon и app icons
 * Sitemap для поисковых систем
 * Robots.txt
+* Деплой на vercel https://avramenkomy.vercel.app
 
 ## Структура проекта
 
@@ -176,7 +177,6 @@ export default nextConfig;
 * Добавить блог
 * Добавить MDX
 * Добавить RSS feed
-* Задеплоить проект на Vercel
 * Подключить собственный домен
 
 ## Соглашение по коммитам
@@ -241,6 +241,7 @@ Frontend Developer
 * App icons and favicon
 * Sitemap
 * Robots.txt
+* deploy to Vercel https://avramenkomy.vercel.app
 
 ## Project Structure
 
@@ -378,7 +379,6 @@ During development, this project covers several important Next.js and React conc
 * Add blog
 * Add MDX support
 * Add RSS feed
-* Deploy to Vercel
 * Connect a custom domain
 
 ## Commit Convention
