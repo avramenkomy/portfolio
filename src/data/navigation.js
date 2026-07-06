@@ -13,7 +13,7 @@ const navigation = [
   },
   {
     title: 'Contact',
-    href: '/#contact',
+    href: '/contact',
   },
 ]
 
