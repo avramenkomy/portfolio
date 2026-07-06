@@ -1,6 +1,6 @@
 const projects = {
   title: 'Projects',
-  description: '',
+  description: 'Selected projects that demonstrate my approach to frontend development.',
   items: [
     {
       title: "Portfolio Website",
@@ -8,6 +8,9 @@ const projects = {
       stack: ["Next.js", "React", "JavaScript", "Tailwind CSS"],
       github: "https://github.com/your-name/portfolio",
       demo: "https://your-domain.com",
+
+      slug: 'portfolio-website',
+      featured: true,
     },
 
     {
@@ -16,6 +19,9 @@ const projects = {
       stack: ["React", "JavaScript", "CSS"],
       github: "https://github.com/your-name/task-manager",
       demo: "https://task-manager-demo.com",
+
+      slug: 'task-manager',
+      featured: true,
     },
 
     {
@@ -24,6 +30,9 @@ const projects = {
       stack: ["JavaScript", "API", "React"],
       github: "https://github.com/your-name/weather-app",
       demo: "https://weather-demo.com",
+
+      slug: 'weather-app',
+      featured: true,
     },
   ],
 }
