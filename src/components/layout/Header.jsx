@@ -4,22 +4,22 @@ import navigation from '@/data/navigation';
 
 export default function Header() {
   return (
-    <header className="border-b border-zinc-800">
-      <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-6">
+    <header className="sticky top-0 z-50 border-b border-zinc-800/80 bg-zinc-950/80 backdrop-blur-xl">
+      <div className="container flex h-16 items-center justify-between">
         <Link
           href="/"
-          className="text-xl font-bold"
+          className="text-lg font-bold tracking-tight text-zinc-50 transition hover:text-blue-400"
         >
           Mikhail
         </Link>
 
-        <nav>
-          <ul className="flex gap-6">
+        <nav aria-label="General navigation">
+          <ul className="hidden items-center gap-6 md:flex">
             {navigation.map(item => (
               <li key={item.href}>
                 <Link
                   href={item.href}
-                  className="transition hover:text-blue-400"
+                  className="text-sm font-medium text-zinc-400 transition hover:text-zinc-50"
                 >
                   {item.title}
                 </Link>

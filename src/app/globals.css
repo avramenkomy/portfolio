@@ -36,6 +36,10 @@ body {
   color: var(--foreground);
 }
 
+section {
+  scroll-margin-top: 80px;
+}
+
 
 .container {
   width: 100%;
