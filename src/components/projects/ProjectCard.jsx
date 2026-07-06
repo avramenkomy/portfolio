@@ -1,11 +1,14 @@
+import Card from '@/components/ui/Card';
+
 export default function ProjectCard({ project }) {
   return (
-    <article
-      className="rounded-2xl border border-zinc-800 bg-zinc-900/50 p-6 transition-all duration-300 hover:border-blue-500/40"
+    <Card
+      as="article"
+      className="h-full p-6"
     >
       <div className="flex h-full flex-col">
         <div>
-          <h3 className="text-2xl font-semibold tracking-tight">
+          <h3 className="text-2xl font-semibold tracking-tight text-zinc-50">
             {project.title}
           </h3>
 
@@ -18,7 +21,7 @@ export default function ProjectCard({ project }) {
           {project.stack.map(tech => (
             <span
               key={tech}
-              className="rounded-full border border-zinc-700 px-3 py-1 text-sm text-zinc-300"
+              className="rounded-full border border-zinc-800 bg-zinc-950 px-3 py-1 text-sm text-zinc-300"
             >
               {tech}
             </span>
@@ -45,6 +48,6 @@ export default function ProjectCard({ project }) {
           </a>
         </div>
       </div>
-    </article>
+    </Card>
   )
 }
