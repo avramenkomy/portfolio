@@ -1,7 +1,9 @@
 import Link from 'next/link';
 
+import { cn } from '@/lib/utils';
+
 export default function Button(props) {
-  const { href, children, variant='primary' } = props;
+  const { href, children, variant='primary', className='' } = props;
 
   const variants = {
     primary: 'bg-blue-500 hover:bg-blue-600 text-white',
@@ -11,16 +13,12 @@ export default function Button(props) {
   return (
     <Link
       href={href}
-      className={`
-        inline-flex
-        items-center
-        rounded-lg
-        px-6
-        py-3
-        font-medium
-        transition
-        ${variants[variant]}
-      `}
+      className={cn(
+        "inline-flex items-center justify-center rounded-lg px-6 py-3",
+        "font-medium transition",
+        variants[variant],
+        className
+      )}
     >
       {children}
     </Link>
