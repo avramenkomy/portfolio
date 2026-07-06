@@ -1,19 +1,19 @@
 const navigation = [
   {
     title: 'About',
-    href: '/about',
+    href: '/#about',
+  },
+  {
+    title: 'Stack',
+    href: '/#tech-stack',
   },
   {
     title: 'Projects',
-    href: '/projects',
-  },
-  {
-    title: 'Blog',
-    href: '/blog',
+    href: '/#projects',
   },
   {
     title: 'Contact',
-    href: '/contact',
+    href: '/#contact',
   },
 ]
 

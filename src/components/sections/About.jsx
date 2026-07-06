@@ -7,7 +7,7 @@ import about from '@/data/about';
 
 export default function About() {
   return (
-    <Section>
+    <Section id="about">
       <SectionTitle
         title={about.title}
         description={about.description}

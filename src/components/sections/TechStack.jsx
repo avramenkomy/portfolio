@@ -7,7 +7,7 @@ import techStack from '@/data/techStack';
 
 export default function TechStack() {
   return (
-    <Section>
+    <Section id="tech-stack">
       <SectionTitle
         title={techStack.title}
         description={techStack.description}
