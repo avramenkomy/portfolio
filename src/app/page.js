@@ -1,9 +1,13 @@
 import Hero from '@/components/sections/Hero';
+import About from '@/components/sections/About';
+import TechStack from '@/components/sections/TechStack';
 
 export default function Home() {
   return (
-    <main className="mx-auto max-w-7xl px-6 py-24">
+    <>
       <Hero />
-    </main>
+      <About />
+      <TechStack />
+    </>
   );
 }

@@ -43,8 +43,8 @@ export default function Hero() {
         </div>
 
         <HeroImage />
-        
-        <div className="absolute -inset-4 -z-10 rounded-full bg-yellow-500/20 blur-3xl" />
+
+        {/* <div className="absolute -inset-4 -z-10 rounded-full bg-yellow-500/20 blur-3xl" /> */}
       </div>
     </Section>
   )
