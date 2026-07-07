@@ -13,6 +13,8 @@ export const metadata = {
 
 
 export default function ProjectsPage() {
+  const featuredProjects = projects.items.filter(project => project.featured);
+
   return (
     <main className="py-24">
       <Container>
@@ -22,7 +24,7 @@ export default function ProjectsPage() {
         />
 
         <div className="grid gap-6 lg:grid-cols-3">
-          {projects.items.map(project => (
+          {featuredProjects.map(project => (
             <ProjectCard
               key={project.slug}
               project={project}

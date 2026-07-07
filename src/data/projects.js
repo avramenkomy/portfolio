@@ -21,7 +21,7 @@ const projects = {
       demo: "https://task-manager-demo.com",
 
       slug: 'task-manager',
-      featured: true,
+      featured: false,
     },
 
     {
@@ -32,8 +32,30 @@ const projects = {
       demo: "https://weather-demo.com",
 
       slug: 'weather-app',
+      featured: false,
+    },
+
+    {
+      title: 'ContentHub',
+      description: 'Minimplatform with content moderation. Users register, create cards/posts, the moderator checks them, the admin manages users and roles. A feedback form that sends an email and additionally saves the message in the database.',
+      stack: ['Next.js', 'Taiwind CSS', 'PostgreSQL', 'Prisma', 'Auth.js/NextAuth', 'Resend', 'Supabase Storage',],
+      github: "https://github.com/your-name/content-hub",
+      demo: "https://content-hub-demo.com",
+
+      slug: 'content-hub',
       featured: true,
     },
+
+    {
+      title: 'altika',
+      description: 'Сайт экспертной компании с описанием специфики работы и предоставляемых услугах.',
+      stack: ['JavaScript', 'React.js', 'Material UI', 'Django', 'Rest Framework'],
+      github: 'https://github.com/avramenkomy/altika',
+      demo: 'https://altika-expert.ru',
+
+      slug: 'altika',
+      featured: true,
+    }
   ],
 }
 
