@@ -6,8 +6,8 @@ const projects = {
       title: "Portfolio Website",
       description: "Personal portfolio website for Next.js with a modern interface, adaptive layout and component architecture.",
       stack: ["Next.js", "React", "JavaScript", "Tailwind CSS"],
-      github: "https://github.com/your-name/portfolio",
-      demo: "https://your-domain.com",
+      github: "https://github.com/avramenkomy/portfolio",
+      demo: "https://avramenkomy.vercel.app/",
 
       slug: 'portfolio-website',
       featured: true,
