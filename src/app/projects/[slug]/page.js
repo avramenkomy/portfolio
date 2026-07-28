@@ -65,11 +65,11 @@ export default async function ProjectPage({ params }) {
             ))}
           </div>
 
-          <div className="mt-10 flex flex-col gap-4 sm:flex-row">
+          {project.demo && <div className="mt-10 flex flex-col gap-4 sm:flex-row">
             <Button href={project.demo}>
               Live Demo
             </Button>
-          </div>
+          </div>}
 
           <div className="mt-10 flex flex-col gap-4 sm:flex-row">
             <Button href={project.github}>

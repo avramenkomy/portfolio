@@ -36,7 +36,7 @@ export default function ProjectCard({ project }) {
           >
             Details
           </Link>
-          
+
           <a
             href={project.github}
             target="_blank"
@@ -46,14 +46,14 @@ export default function ProjectCard({ project }) {
             GitHub
           </a>
 
-          <a
+          {project.demo && <a
             href={project.demo}
             target="_blank"
             rel="noreferrer"
             className="text-sm font-medium text-blue-400 transition hover:text-blue-300"
           >
             Demo
-          </a>
+          </a>}
         </div>
       </div>
     </Card>
