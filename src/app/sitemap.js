@@ -1,6 +1,8 @@
 import site from '@/data/site';
 import projects from '@/data/projects';
 
+export const dynamic = 'force-static';
+
 
 export default function sitemap() {
   const staticRoutes = ['', '/about', '/projects', '/contact'];

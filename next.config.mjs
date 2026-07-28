@@ -8,6 +8,10 @@ const nextConfig = {
   turbopack: {
     root: path.resolve(process.cwd()),
   },
+  output: 'export',
+  images: {
+    unoptimized: true,
+  },
 };
 
 export default nextConfig;
