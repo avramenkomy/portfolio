@@ -206,6 +206,30 @@ git commit -m "docs: add project README"
 Mikhail Avramenko
 Frontend Developer
 
+## Инструкция по деплою REG.ru
+
+* В корне проекта выполнить удалить предыдущий build
+* Собрать проект заново
+* Проверить папку /out : 404.html, _next, favicon.ico, index.html, robots.txt, sitemap.xml, ...
+* Запустить статическую сборку
+* Проверить localhost:8080 главная страница, переходы по меню, страницы проектов
+  мобильное меню, картинки, robots.txt, sitemap.xml
+* Остановить сервер ctrl + C
+* В корне проекта создать архив билда
+* Проверить структуру архива билда, все файлы должны быть в корне, а не в каталоге /out
+* Скопировать архив в папку сайта на хосте
+* Разархивировать в корень проекта
+
+```bash
+rm -rf out
+pnpm build
+ls out
+cd out
+python3 -m http.server 8080
+zip -r ../dev-mike-static.zip .
+cd ..
+```
+
 ---
 
 ## 🇬🇧 English Version
