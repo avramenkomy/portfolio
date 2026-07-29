@@ -14,6 +14,16 @@
 
   --border: #27272a;
 
+  /* aliases for content pages */
+  --card: var(--surface);
+  --card-hover: var(--surface-hover);
+  --accent: var(--primary);
+  --accent-hover: var(--primary-hover);
+  --muted-foreground: var(--muted);
+  --muted-surface: #111113;
+  --code-background: #020617;
+  --code-foreground: #e2e8f0;
+
   /* radius */
   --radius-sm: 8px;
   --radius-md: 12px;

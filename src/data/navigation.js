@@ -15,6 +15,10 @@ const navigation = [
     title: 'Contact',
     href: '/contact',
   },
+  {
+    title: 'Interview',
+    href: '/interview',
+  }
 ]
 
 export default navigation;
