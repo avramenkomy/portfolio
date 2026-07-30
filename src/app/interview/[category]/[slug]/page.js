@@ -58,6 +58,12 @@ export default async function InterviewQuestionPage({ params }) {
   const nextQuestion = questions[currentQuestionIndex + 1];
   const prevQuestion = questions[currentQuestionIndex - 1];
 
+  const otherQuestionsInThisCategory = questions
+    .filter(item => item.slug !== slug)
+    .filter(item => item.slug !== nextQuestion?.slug)
+    .filter(item => item.slug !== prevQuestion?.slug)
+    .slice(0, 3);
+
   return (
     <main className={styles.page}>
       <article className={styles.article}>
@@ -118,6 +124,23 @@ export default async function InterviewQuestionPage({ params }) {
           </ul>
         </section>
       </article>
+
+      {otherQuestionsInThisCategory.length > 0 &&
+        <section className={styles.otherQuestions}>
+          <h2 className={styles.otherQuestionsTitle}>
+            Другие вопросы из раздела {category.title}:
+          </h2>
+
+          {otherQuestionsInThisCategory.map((item, index) => (
+            <Link
+              key={item.slug}
+              href={`/interview/${category.slug}/${item.slug}`}
+            >
+              {`${index + 1}`.padStart(2, '0')}. {item.title}
+            </Link>
+          ))}
+        </section>
+      }
 
       <section className={styles.questionFooter}>
         {prevQuestion &&

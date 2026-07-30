@@ -171,6 +171,42 @@
   font-size: 14px;
 }
 
+.otherQuestions {
+  margin: 32px 0 0 ;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  a {
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    width: fit-content;
+    padding: 6px 10px;
+    background: var(--card);
+    color: var(--muted-foreground);
+    text-decoration: none;
+    transition:
+      transform 0.2s ease,
+      border-color 0.2s ease,
+      background-color 0.2s ease,
+      box-shadow 0.2s ease;
+  }
+
+  a:hover {
+    transform: translateY(-4px);
+    border-color: var(--accent);
+    background: var(--card-hover);
+    box-shadow: 0 20px 40px rgb(0 0 0 / 20%);
+  }
+}
+
+.otherQuestionsTitle {
+  margin: 0 0 8px;
+  color: var(--foreground);
+  font-size: 24px;
+  line-height: 1.2;
+}
+
 .categoryMeta {
   margin: 12px 0 0;
   width: fit-content;
