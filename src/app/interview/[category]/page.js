@@ -6,6 +6,7 @@ import {
   interviewCategories,
 } from '@/data/interviewQuestions';
 import styles from '../interview.module.scss';
+import Badge from '@/components/ui/Badge';
 
 
 export function generateStaticParams() {
@@ -60,16 +61,29 @@ export default async function InterviewCategoryPage({ params }) {
         <h1 className={styles.title}>{category.title}</h1>
 
         <p className={styles.description}>{category.description}</p>
+
+        <p className={styles.categoryMeta}>
+          Вопросов в категории: {questions.length}
+        </p>
       </section>
 
       <section className={styles.questionList} aria-label="Список вопросов">
-        {questions.map((question) => (
+        {questions.map((question, index) => (
           <Link
             className={styles.questionCard}
             href={`/interview/${category.slug}/${question.slug}`}
             key={question.slug}
           >
+            <div className={styles.questionCardHeader}>
+              <span className={styles.questionNumber}>
+                {String(index + 1).padStart(2, '0')}
+              </span>
+
+              <Badge>{category.title}</Badge>
+            </div>
+
             <h2 className={styles.questionTitle}>{question.title}</h2>
+
             <p className={styles.questionText}>{question.shortAnswer}</p>
           </Link>
         ))}
