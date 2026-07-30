@@ -1,13 +1,17 @@
 import Link from 'next/link';
 
 import NotFound from '@/app/not-found';
+import Button from '@/components/ui/Button';
 
 import {
   getInterviewCategoryBySlug,
   getQuestionBySlug,
+  getQuestionsByCategory,
   interviewQuestions,
 } from '@/data/interviewQuestions';
+
 import styles from '../../interview.module.scss';
+
 
 export function generateStaticParams() {
   return interviewQuestions.map((question) => ({
@@ -15,6 +19,7 @@ export function generateStaticParams() {
     slug: question.slug,
   }));
 }
+
 
 export async function generateMetadata({ params }) {
   const { category, slug } = await params;
@@ -33,10 +38,9 @@ export async function generateMetadata({ params }) {
   };
 }
 
+
 export default async function InterviewQuestionPage({ params }) {
   const { category: categorySlug, slug } = await params;
-
-  console.log('InterviewQuestionPage', categorySlug, slug);
 
   const category = getInterviewCategoryBySlug(categorySlug);
   const question = getQuestionBySlug(categorySlug, slug);
@@ -44,6 +48,15 @@ export default async function InterviewQuestionPage({ params }) {
   if (!category || !question) {
     return <NotFound />
   }
+
+  const questions = getQuestionsByCategory(categorySlug);
+
+  const currentQuestionIndex = questions.findIndex(
+    item => item.slug === slug
+  );
+
+  const nextQuestion = questions[currentQuestionIndex + 1];
+  const prevQuestion = questions[currentQuestionIndex - 1];
 
   return (
     <main className={styles.page}>
@@ -105,6 +118,24 @@ export default async function InterviewQuestionPage({ params }) {
           </ul>
         </section>
       </article>
+
+      <section className={styles.questionFooter}>
+        {prevQuestion &&
+          <Button href={`/interview/${category.slug}/${prevQuestion.slug}`}>
+            Предыдущий вопрос
+          </Button>
+        }
+
+        {nextQuestion &&
+          <Button href={`/interview/${category.slug}/${nextQuestion.slug}`}>
+            Следующий вопрос
+          </Button>
+        }
+
+        <Button href={`/interview/${category.slug}`}>
+          Вернуться к категории
+        </Button>
+      </section>
     </main>
   );
 }

@@ -161,6 +161,16 @@
   line-height: 1.6;
 }
 
+.questionFooter {
+  margin: 40px 0 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 4px;
+  color: var(--foreground);
+  font-size: 14px;
+}
+
 .categoryMeta {
   margin: 12px 0 0;
   width: fit-content;
