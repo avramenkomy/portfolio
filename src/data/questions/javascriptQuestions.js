@@ -18,7 +18,7 @@ export const javascriptQuestions = [
     return count;
   };
 }
-
+d
 const counter = createCounter();
 
 console.log(counter()); // 1
