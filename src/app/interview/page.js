@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { interviewCategories } from '@/data/interviewQuestions';
+import { interviewCategories, getQuestionsCountByCategory } from '@/data/interviewQuestions';
 import styles from './interview.module.scss';
 
 
@@ -9,7 +9,6 @@ export const metadata = {
 }
 
 export default function InterviewPage() {
-  console.log('InterviewPage', interviewCategories);
 
   return (
     <main className={styles.page}>
@@ -26,18 +25,21 @@ export default function InterviewPage() {
       </section>
 
       <section className={styles.grid} aria-label="Категории вопросов">
-        {interviewCategories.map(category => {
-          console.log('category', category);
-
-          return <Link
+        {interviewCategories.map(category => (
+          <Link
             className={styles.card}
             href={`/interview/${category.slug}`}
             key={category.slug}
           >
-            <h2 className={styles.cardTitle}>{category.title}</h2>
+            <div className={styles.cardHeader}>
+              <h2 className={styles.cardTitle}>{category.title}</h2>
+              <span className={styles.cardQuestionsCount}>
+                Вопросов: {getQuestionsCountByCategory(category.slug)}
+              </span>
+            </div>
             <p className={styles.cardText}>{category.description}</p>
           </Link>
-        })}
+        ))}
       </section>
     </main>
   )
