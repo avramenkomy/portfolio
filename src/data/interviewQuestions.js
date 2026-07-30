@@ -3,6 +3,9 @@ import { reactQuestions } from './questions/reactQuestions';
 import { reduxQuestions } from './questions/reduxQuestions';
 import { typescriptQuestions } from './questions/typescriptQuestions';
 
+/**
+ * общий список категорий с описанием и метками
+ */
 export const interviewCategories = [
   {
     slug: 'javascript',
@@ -30,6 +33,9 @@ export const interviewCategories = [
   },
 ];
 
+/**
+ * Общий список вопросов
+ */
 export const interviewQuestions = [
   ...javascriptQuestions,
   ...reactQuestions,
@@ -38,11 +44,29 @@ export const interviewQuestions = [
 ];
 
 
+/**
+ * @function
+ * @name getInterviewCategoryBySlug
+ * @description получение категории из общего списка вопросов
+ *
+ * @param {string} categorySlug
+ *
+ * @returns {string} категория вопросов
+ */
 export function getInterviewCategoryBySlug(categorySlug) {
   return interviewCategories.find(category => category.slug === categorySlug);
 }
 
 
+/**
+ * @function
+ * @name getQuestionsByCategory
+ * @description получение списка вопросов конкретной категории
+ *
+ * @param {string} categorySlug строковая метка категории
+ *
+ * @returns {Array<object>} список вопросов
+ */
 export function getQuestionsByCategory(categorySlug) {
   return interviewQuestions.filter(
     question => question.category === categorySlug
@@ -50,9 +74,33 @@ export function getQuestionsByCategory(categorySlug) {
 }
 
 
+/**
+ * @function
+ * @name getQuestionBySlug
+ * @description получение конкретного вопроса из конкретной категории
+ *
+ * @param {string} categorySlug строковая метка категории
+ * @param {string} questionSlug строковая метка вопроса
+ *
+ * @returns {object} объект вопроса
+ */
 export function getQuestionBySlug(categorySlug, questionSlug) {
   return interviewQuestions.find(
     question =>
       question.category === categorySlug && question.slug === questionSlug
   );
+}
+
+
+/**
+ * @function
+ * @name getQuestionsCountByCategory
+ * @description получение количества вопросов в конкретной категории
+ *
+ * @param {string} categorySlug строковая метка категории
+ *
+ * @returns {number} количество вопросов с указанной категорией
+ */
+export function getQuestionsCountByCategory(categorySlug) {
+  return getQuestionsByCategory(categorySlug).length;
 }
