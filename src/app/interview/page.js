@@ -1,6 +1,12 @@
 import Link from 'next/link';
-import { interviewCategories, getQuestionsCountByCategory } from '@/data/interviewQuestions';
+import {
+  interviewCategories,
+  getQuestionsCountByCategory,
+  interviewQuestions,
+} from '@/data/interviewQuestions';
 import styles from './interview.module.scss';
+
+import InterviewSearch from '@/components/interview/InterviewSearch';
 
 
 export const metadata = {
@@ -22,6 +28,13 @@ export default function InterviewPage() {
           Каждый материал содержит краткий ответ, подробное объяснение, пример
           кода и формулировку для собеседования.
         </p>
+      </section>
+
+      <section className={styles.interviewSearch}>
+        <InterviewSearch
+          allQuestions={interviewQuestions}
+          categories={interviewCategories}
+        />
       </section>
 
       <section className={styles.grid} aria-label="Категории вопросов">
