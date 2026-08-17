@@ -115,7 +115,7 @@
 
 .interviewSearch {
   margin-bottom: 48px;
-  border: px solid var(--border);
+  border: 1px solid var(--border);
   border-radius: 24px;
   padding: 24px;
   background: var(--card);
@@ -136,22 +136,73 @@
   font-weight: 600;
 }
 
+.questionSearchLabelHead {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.searchControl {
+  display: flex;
+  align-items: stretch;
+  gap: 12px;
+
+  position: relative;
+}
+
 .questionSearchInput {
   width: 100%;
   margin: 0;
   border: 1px solid var(--border);
   border-radius: 14px;
   padding: 12px 14px;
+  padding-right: 110px;
+  box-sizing: border-box;
   background: var(--background);
   color: var(--foreground);
   font: inherit;
   outline: none;
+  -webkit-appearance: none;
+  appearance: none;
+
+  &::-webkit-search-decoration,
+  &::-webkit-search-cancel-button,
+  &::-webkit-search-results-button,
+  &::-webkit-search-results-decoration {
+    display: none;
+  }
+
+  &::-ms-clear,
+  &::-ms-reveal {
+    display: none;
+    width: 0;
+    height: 0;
+  }
 
   &::placeholder {
     color: var(--muted-foreground);
   }
 
   &:focus {
+    border-color: var(--accent);
+  }
+}
+
+.clearSearchButton {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  background: var(--card);
+  color: var(--muted-foreground);
+  padding: 5px 10px;
+  z-index: 1;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  cursor: pointer;
+
+  &:hover {
     border-color: var(--accent);
   }
 }
@@ -165,7 +216,7 @@
 
 .searchedQuestionCard {
   padding: 14px;
-  border: 1px solid (--border);
+  border: 1px solid var(--border);
   border-radius: 14px;
   background: var(--muted-surface);
   color: inherit;

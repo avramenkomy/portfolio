@@ -35,20 +35,52 @@ export default function InterviewSearch(props) {
     });
   }, [questions, categories, searchValue]);
 
+
+  function clearSearch() {
+    setSearch('');
+  }
+
   return (
     <section>
       <h2 className={styles.searchTitle}>Поиск по вопросам:</h2>
 
       <label className={styles.searchLabel}>
-        <span>Поисковый запрос</span>
+        <div className={styles.questionSearchLabelHead}>
+          <span>
+            {searchValue
+              ? `Результат по запросу '${searchValue}'`
+              : 'Введите запрос, чтобы найти вопрос по JavaScript, React, Redux или TypeScript.'
+            }
+          </span>
+          {searchValue &&
+            <span>
+              Найдено вопросов: {resultQuestionsAfterSearch.length}
+            </span>
+          }
+        </div>
 
-        <input
-          type="search"
-          value={search}
-          onChange={event => setSearch(event.target.value)}
-          className={styles.questionSearchInput}
-          placeholder="Например: Promise, useEffect, Redux"
-        />
+        <div className={styles.searchControl}>
+          <input
+            type="search"
+            id="questionSearchInput"
+            value={search}
+            onChange={event => setSearch(event.target.value)}
+            className={styles.questionSearchInput}
+            placeholder="Например: Promise, useEffect, Redux"
+          />
+
+          {searchValue &&
+            <button
+              type="button"
+              className={styles.clearSearchButton}
+              onClick={clearSearch}
+            >
+              Очистить
+            </button>
+          }
+        </div>
+
+
 
       </label>
 
@@ -78,13 +110,13 @@ export default function InterviewSearch(props) {
                       </div>
 
                       <div className={styles.searchedQuestionBadge}>
-                        <Badge>{category.title ?? item.category}</Badge>
+                        <Badge>{category?.title ?? item.category}</Badge>
                       </div>
                     </Link>
                   )
                 })
               : <p className={styles.emptySearchResult}>
-                  Не найдено соответствий поисковому запросу
+                  {`По запросу "${search.trim()}" ничего не найдено.`}
                 </p>
           }
         </div>
