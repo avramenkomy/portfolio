@@ -128,19 +128,55 @@
   line-height: 1.2;
 }
 
-.searchLabel {
-  display: grid;
-  gap: 8px;
-  color: var(--foreground);
-  font-size: 14px;
-  font-weight: 600;
-}
-
 .questionSearchLabelHead {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px 24px;
+  margin-bottom: 10px;
+}
+
+.searchLabel {
+  display: inline-block;
+  margin: 0;
+  color: var(--foreground);
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.searchSummary {
+  margin: 6px 0 0;
+  max-width: 620px;
+  color: var(--muted-foreground);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.6;
+}
+
+.filterButtonsContainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.filterButtons button {
+  cursor: pointer;
+}
+
+.filterButtons button:not(:last-child)::after {
+  content: '|';
+  margin: 0 5px;
+  color: var(--foreground);
+  text-decoration: none;
+}
+
+.activeFilterButton {
+  color: var(--accent);
+  text-decoration: underline;
 }
 
 .searchControl {
