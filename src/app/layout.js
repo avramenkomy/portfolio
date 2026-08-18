@@ -65,7 +65,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="ru">
-      <body className={`${geist.className} bg-zinc-950 text-zinc-100`}>
+      <body className={`${geist.className}`}>
         <Header />
 
         <div className="pt-16">

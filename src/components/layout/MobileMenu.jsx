@@ -25,7 +25,7 @@ export default function MobileMenu() {
       <button
         type="button"
         onClick={toggleMenu}
-        className="relative z-50 flex h-11 w-11 touch-manipulation select-none appearance-none items-center justify-center rounded-lg border border-zinc-800 bg-zinc-950 text-zinc-100 transition active:scale-95"
+        className="relative z-50 flex h-11 w-11 touch-manipulation select-none appearance-none items-center justify-center rounded-lg border border-[var(--border)] bg-[var(--surface)] text-[var(--foreground)] transition active:scale-95"
         aria-label={isOpen ? 'Close menu' : 'Open menu'}
         aria-expanded={isOpen}
       >
@@ -62,7 +62,7 @@ export default function MobileMenu() {
             className="fixed inset-0 z-40 bg-black/40 md:hidden"
           />
 
-          <div className="fixed inset-x-4 top-20 z-50 rounded-2xl border border-zinc-800 bg-zinc-950/95 p-6 shadow-2xl backdrop-blur-xl md:hidden">
+          <div className="fixed inset-x-4 top-20 z-50 rounded-2xl border border-[var(--border)] bg-[var(--surface)]/95 p-6 shadow-2xl backdrop-blur-xl md:hidden">
             <nav aria-label="Mobile navigation">
               <ul className="flex flex-col gap-4">
                 {navigation.map((item) => (
@@ -70,7 +70,7 @@ export default function MobileMenu() {
                     <Link
                       href={item.href}
                       onClick={closeMenu}
-                      className="block rounded-lg px-3 py-3 text-sm font-medium text-zinc-400 transition hover:bg-zinc-900 hover:text-zinc-50 active:bg-zinc-900 active:text-zinc-50"
+                      className="block rounded-lg px-3 py-3 text-sm font-medium text-[var(--muted-foreground)] transition hover:bg-[var(--surface-hover)] hover:text-[var(--foreground)] active:bg-[var(--surface-hover)] active:text-[var(--foreground)]"
                     >
                       {item.title}
                     </Link>
