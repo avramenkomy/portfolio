@@ -15,7 +15,7 @@ export default function About() {
       />
 
       <Card className="p-6">
-        <p className="leading-8 text-zinc-300">
+        <p className="leading-8 text-[var(--muted-foreground)]">
           {about.content}
         </p>
 
