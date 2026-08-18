@@ -6,8 +6,8 @@ export default function Button(props) {
   const { href, children, variant='primary', className='' } = props;
 
   const variants = {
-    primary: 'bg-blue-500 hover:bg-blue-600 text-white',
-    secondary: 'border border-zinc-700 hover:bg-zinc-900',
+    primary: 'bg-[var(--accent)] text-white hover:bg-[var(--accent-hover)]',
+    secondary: 'border border-[var(--border)] text-[var(--foreground)] hover:bg-[var(--surface-hover)]',
   }
 
   const buttonClassName = cn(

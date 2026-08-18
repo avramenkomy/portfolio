@@ -1,7 +1,7 @@
 export default function Footer() {
   return (
-    <footer className="border-t border-zinc-800 py-6">
-      <div className="mx-auto max-w-7xl px-6 text-sm text-zinc-500">
+    <footer className="border-t border-[var(--border)] py-6">
+      <div className="mx-auto max-w-7xl px-6 text-sm text-[var(--muted-foreground)]">
         &copy; 2026 Mikhail Avramenko. All rights reserved.
       </div>
     </footer>
