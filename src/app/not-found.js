@@ -11,7 +11,7 @@ export default function NotFound() {
           hover={false}
           className="relative overflow-hidden p-8 text-center sm:p-12"
         >
-          <div className="pointer-events-none absolute left-1/2 top-0 h-64 w-64 -translate-x-1/2 rounded-full bg-[var(--accent)]/20 blur-3xl" />
+          <div className="pointer-events-none absolute left-1/2 top-0 h-64 w-64 -translate-x-1/2 rounded-full bg-(--accent)/20 blur-3xl" />
 
           <div className="relative z-10">
             <p className="text-sm font-medium uppercase tracking-[0.3em] text-(--accent)">
