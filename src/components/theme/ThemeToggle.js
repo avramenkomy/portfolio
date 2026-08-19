@@ -27,20 +27,20 @@ export default function ThemeToggle() {
   }, []);
 
   function handleToggleTheme() {
-    const nextTheme = theme === 'dark' ? 'light' : 'dark';
-    const root = document.documentElement;
+  const root = document.documentElement;
+  const currentTheme = root.dataset.theme === 'light' ? 'light' : 'dark';
+  const nextTheme = currentTheme === 'dark' ? 'light' : 'dark';
 
-    root.classList.add('theme-transition');
+  root.classList.add('theme-transition');
+  root.dataset.theme = nextTheme;
 
-    root.dataset.theme = nextTheme;
-    localStorage.setItem(THEME_STORAGE_KEY, nextTheme);
+  localStorage.setItem(THEME_STORAGE_KEY, nextTheme);
+  setTheme(nextTheme);
 
-    setTheme(nextTheme);
-
-    window.setTimeout(() => {
-      root.classList.remove('theme-transition');
-    }, [220]);
-  }
+  window.setTimeout(() => {
+    root.classList.remove('theme-transition');
+  }, 220);
+}
 
   const isDarkTheme = theme === 'dark';
 
