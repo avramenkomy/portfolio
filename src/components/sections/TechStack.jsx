@@ -16,11 +16,11 @@ export default function TechStack() {
         {techStack.items.map((technology) => (
           <Card key={technology} className="group p-5">
             <div className="flex items-center justify-between gap-4">
-              <p className="text-lg font-medium text-zinc-100">
+              <p className="text-lg font-medium text-(--foreground)">
                 {technology}
               </p>
 
-              <span className="flex h-9 w-9 items-center justify-center rounded-full border border-zinc-800 bg-zinc-950 text-sm font-semibold text-blue-400 transition group-hover:border-blue-500/40">
+              <span className="flex h-9 w-9 items-center justify-center rounded-full border border-(--border) bg-(--muted-surface) text-(--accent) transition group-hover:border-(--accent)">
                 {technology[0]}
               </span>
             </div>

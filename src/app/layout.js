@@ -61,11 +61,32 @@ export const metadata = {
   }
 }
 
+const themeScript = `
+  try {
+    const savedTheme = localStorage.getItem('portfolio-theme');
+    const theme = savedTheme === 'light' || savedTheme === 'dark'
+      ? savedTheme
+      : 'dark';
+
+    document.documentElement.dataset.theme = theme;
+  } catch {
+    document.documentElement.dataset.theme = 'dark';
+  }
+`;
+
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="ru">
-      <body className={`${geist.className} bg-zinc-950 text-zinc-100`}>
+    <html lang="en" data-theme="dark" suppressHydrationWarning>
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: themeScript
+          }}
+        />
+      </head>
+
+      <body className={`${geist.className}`}>
         <Header />
 
         <div className="pt-16">

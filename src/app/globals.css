@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
-:root {
-  /* colors */
+:root,
+html[data-theme='dark'] {
   --background: #09090b;
   --surface: #18181b;
   --surface-hover: #27272a;
@@ -14,23 +14,57 @@
 
   --border: #27272a;
 
-  /* aliases for content pages */
   --card: var(--surface);
   --card-hover: var(--surface-hover);
   --accent: var(--primary);
   --accent-hover: var(--primary-hover);
+  --accent-glow: rgb(59 130 246 / 0.4);
+  --accent-foreground: #ffffff;
   --muted-foreground: var(--muted);
   --muted-surface: #111113;
+
   --code-background: #020617;
   --code-foreground: #e2e8f0;
 
-  /* radius */
+  --overlay: rgb(0 0 0 / 0.4);
+
   --radius-sm: 8px;
   --radius-md: 12px;
   --radius-lg: 20px;
 
-  /* layout */
   --container: 1280px;
+
+  color-scheme: dark;
+}
+
+html[data-theme='light'] {
+  --background: #f8fafc;
+  --surface: #ffffff;
+  --surface-hover: #f1f5f9;
+
+  --foreground: #0f172a;
+  --muted: #64748b;
+
+  --primary: #2563eb;
+  --primary-hover: #1d4ed8;
+
+  --border: #e2e8f0;
+
+  --card: var(--surface);
+  --card-hover: var(--surface-hover);
+  --accent: var(--primary);
+  --accent-hover: var(--primary-hover);
+  --accent-glow: rgb(37 99 235 / 0.12);
+  --accent-foreground: #ffffff;
+  --muted-foreground: var(--muted);
+  --muted-surface: #f1f5f9;
+
+  --code-background: #0f172a;
+  --code-foreground: #e2e8f0;
+
+  --overlay: rgb(15 23 42 / 0.25);
+
+  color-scheme: light;
 }
 
 * {
@@ -42,18 +76,47 @@ html {
 }
 
 body {
+  min-height: 100vh;
+  margin: 0;
   background: var(--background);
   color: var(--foreground);
+}
+
+html.theme-transition,
+html.theme-transition *,
+html.theme-transition *::before,
+html.theme-transition *::after {
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    fill 0.2s ease,
+    stroke 0.2s ease;
 }
 
 section {
   scroll-margin-top: 80px;
 }
 
-
 .container {
   width: 100%;
   max-width: var(--container);
   margin: 0 auto;
   padding-inline: 24px;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html.theme-transition,
+  html.theme-transition *,
+  html.theme-transition *::before,
+  html.theme-transition *::after {
+    transition:
+      background-color 0.2s ease,
+      color 0.2s ease,
+      border-color 0.2s ease,
+      box-shadow 0.2s ease,
+      fill 0.2s ease,
+      stroke 0.2s ease;
+  }
 }

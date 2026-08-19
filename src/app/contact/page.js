@@ -50,7 +50,7 @@ export default function ContactPage() {
 
         <div className="grid gap-6 lg:grid-cols-[1fr_2fr]">
           <Card hover={false} className="p-6">
-            <p className="text-lg leading-8 text-zinc-300">
+            <p className="text-lg leading-8 text-(--muted-foreground)">
               {contactPage.intro}
             </p>
           </Card>
