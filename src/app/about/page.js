@@ -24,7 +24,7 @@ export default function AboutPage() {
             hover={false}
             className="p-6"
           >
-            <p className="text-lg leading-8 text-[var(--muted-foreground)]">
+            <p className="text-lg leading-8 text-(--muted-foreground)">
               {aboutPage.intro}
             </p>
           </Card>
@@ -32,10 +32,10 @@ export default function AboutPage() {
           <div className="grid gap-6">
             {aboutPage.sections.map(section => (
               <Card key={section.title} className="p-6">
-                <h2 className="text-2xl font-semibold tracking-tight text-[var(--foreground)]">
+                <h2 className="text-2xl font-semibold tracking-tight text-(--foreground)">
                   {section.title}
                 </h2>
-                <p className="mt-4 leading-8 text-[var(--muted-foreground)]">
+                <p className="mt-4 leading-8 text-(--muted-foreground)">
                   {section.text}
                 </p>
               </Card>

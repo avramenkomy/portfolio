@@ -42,15 +42,15 @@ export default async function ProjectPage({ params }) {
     <main className="py-24">
       <Container>
         <div className="max-w-3xl">
-          <p className="text-sm font-medium uppercase tracking-[0.3em] text-[var(--accent)]">
+          <p className="text-sm font-medium uppercase tracking-[0.3em] text-(--accent)">
             Project
           </p>
 
-          <h1 className="mt-4 text-5xl font-bold tracking-tight text-[var(--foreground)] sm:text-6xl">
+          <h1 className="mt-4 text-5xl font-bold tracking-tight text-(--foreground) sm:text-6xl">
             {project.title}
           </h1>
 
-          <p className="mt-6 text-lg leading-8 text-[var(--muted-foreground)]">
+          <p className="mt-6 text-lg leading-8 text-(--muted-foreground)">
             {project.description}
           </p>
 
@@ -58,7 +58,7 @@ export default async function ProjectPage({ params }) {
             {project.stack.map(tech => (
               <span
                 key={tech}
-                className="rounded-full border border-[var(--border)] bg-[var(--muted-surface)] px-3 py-1 text-sm text-[var(--muted-foreground)]"
+                className="rounded-full border border-(--border) bg-(--muted-surface) px-3 py-1 text-sm text-(--muted-foreground)"
               >
                 {tech}
               </span>
