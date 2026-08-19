@@ -25,11 +25,18 @@ export default function ThemeToggle() {
 
   function handleToggleTheme() {
     const nextTheme = theme === 'dark' ? 'light' : 'dark';
+    const root = document.documentElement;
 
-    document.documentElement.dataset.theme = nextTheme;
+    root.classList.add('theme-transition');
+
+    root.dataset.theme = nextTheme;
     localStorage.setItem(THEME_STORAGE_KEY, nextTheme);
 
     setTheme(nextTheme);
+
+    window.setTimeout(() => {
+      root.classList.remove('theme-transition');
+    }, [220]);
   }
 
   const isDarkTheme = theme === 'dark';
