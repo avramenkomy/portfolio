@@ -4,6 +4,9 @@ import { useEffect, useState } from 'react';
 
 import styles from './ThemeToggle.module.scss';
 
+import SunIcon from './SunIcon';
+import MoonIcon from './MoonIcon';
+
 const THEME_STORAGE_KEY = 'portfolio-theme';
 
 export default function ThemeToggle() {
@@ -53,7 +56,7 @@ export default function ThemeToggle() {
       title={isDarkTheme ? 'Светлая тема' : 'Темная тема'}
     >
       <span className={styles.icon} aria-hidden="true">
-        {isMounted && (isDarkTheme ? '☀️' : '🌙')}
+        {isMounted && (isDarkTheme ? <SunIcon /> : <MoonIcon />)}
       </span>
     </button>
   )

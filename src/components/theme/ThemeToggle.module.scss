@@ -30,6 +30,11 @@
   justify-content: center;
   width: 20px;
   height: 20px;
-  font-size: 18px;
-  line-height: 1;
+  color: currentColor;
+
+  svg {
+    display: block;
+    width: 20px;
+    height: 20px;
+  }
 }
