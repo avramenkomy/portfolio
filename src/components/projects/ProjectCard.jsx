@@ -9,11 +9,11 @@ export default function ProjectCard({ project }) {
     >
       <div className="flex h-full flex-col">
         <div>
-          <h3 className="text-2xl font-semibold tracking-tight text-[var(--foreground)]">
+          <h3 className="text-2xl font-semibold tracking-tight text-(--foreground)">
             {project.title}
           </h3>
 
-          <p className="mt-4 leading-7 text-[var(--muted-foreground)]">
+          <p className="mt-4 leading-7 text-(--muted-foreground)">
             {project.description}
           </p>
         </div>
@@ -22,7 +22,7 @@ export default function ProjectCard({ project }) {
           {project.stack.map(tech => (
             <span
               key={tech}
-              className="rounded-full border border-[var(--border)] bg-[var(--muted-surface)] px-3 py-1 text-sm text-[var(--muted-foreground)]"
+              className="rounded-full border border-(--border) bg-(--muted-surface) px-3 py-1 text-sm text-(--muted-foreground)"
             >
               {tech}
             </span>
@@ -32,7 +32,7 @@ export default function ProjectCard({ project }) {
         <div className="mt-8 flex gap-4">
           <Link
             href={`/projects/${project.slug}`}
-            className="text-sm font-medium text-[var(--accent)] transition hover:text-[var(--accent-hover)]"
+            className="text-sm font-medium text-(--accent) transition hover:text-(--accent-hover)"
           >
             Details
           </Link>
@@ -41,7 +41,7 @@ export default function ProjectCard({ project }) {
             href={project.github}
             target="_blank"
             rel="noreferrer"
-            className="text-sm font-medium text-[var(--accent)] transition hover:text-[var(--accent-hover)]"
+            className="text-sm font-medium text-(--accent) transition hover:text-(--accent-hover)"
           >
             GitHub
           </a>
@@ -50,7 +50,7 @@ export default function ProjectCard({ project }) {
             href={project.demo}
             target="_blank"
             rel="noreferrer"
-            className="text-sm font-medium text-[var(--accent)] transition hover:text-[var(--accent-hover)]"
+            className="text-sm font-medium text-(--accent) transition hover:text-(--accent-hover)"
           >
             Demo
           </a>}

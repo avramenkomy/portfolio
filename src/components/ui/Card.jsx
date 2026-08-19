@@ -6,9 +6,9 @@ export default function Card(props) {
   return (
     <Component
       className={cn(
-        'rounded-2xl border border-[var(--border)] bg-[var(--card)] shadow-sm',
+        'rounded-2xl border border-(--border) bg-(--card) shadow-sm',
         'transition-all duration-300',
-        hover && 'hover:-translate-y-1 hover:border-[var(--accent)] hover:bg-[var(--card-hover)]',
+        hover && 'hover:-translate-y-1 hover:border-(--accent) hover:bg-(--card-hover)',
         className
       )}
     >

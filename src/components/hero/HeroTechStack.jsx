@@ -6,7 +6,7 @@ export default function HeroTechStack() {
       {heroTechStack.map(tech => (
         <li
           key={tech}
-          className="rounded-full border border-[var(--border)] bg-[var(--muted-surface)] px-4 text-sm text-[var(--muted-foreground)]"
+          className="rounded-full border border-(--border) bg-(--muted-surface) px-4 text-sm text-(--muted-foreground)"
         >
           {tech}
         </li>

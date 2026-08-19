@@ -3,12 +3,12 @@ export default function SectionTitle(props) {
 
   return (
     <div className="mb-12 max-w-2xl">
-      <h2 className="text-4xl font-bold tracking-tight text-[var(--foreground)]">
+      <h2 className="text-4xl font-bold tracking-tight text-(--foreground)">
         {title}
       </h2>
 
       {description && (
-        <p className="mt-4 text-[var(--muted-foreground)]">
+        <p className="mt-4 text-(--muted-foreground)">
           {description}
         </p>
       )}

@@ -6,13 +6,13 @@ export default function ContactLink(props) {
       href={href}
       target={href.startsWith('http') ? '_blank' : undefined}
       rel={href.startsWith('http') ? 'noreferrer' : undefined}
-      className="rounded-2xl border border-[var(--border)] bg-[var(--card)] p-5 text-[var(--foreground)] transition hover:-translate-y-1 hover:border-[var(--accent)] hover:bg-[var(--card-hover)]"
+      className="rounded-2xl border border-(--border) bg-(--card) p-5 text-(--foreground) transition hover:-translate-y-1 hover:border-(--accent) hover:bg-(--card-hover)"
     >
-      <p className="text-sm font-medium uppercase tracking-[0.2em] text-[var(--muted-foreground)]">
+      <p className="text-sm font-medium uppercase tracking-[0.2em] text-(--muted-foreground)">
         {label}
       </p>
 
-      <p className="mt-3 break-words text-lg font-semibold text-[var(--accent)]">
+      <p className="mt-3 wrap-break-word text-lg font-semibold text-(--accent)">
         {value}
       </p>
     </a>
