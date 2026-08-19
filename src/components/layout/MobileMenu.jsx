@@ -59,7 +59,7 @@ export default function MobileMenu() {
             type="button"
             aria-label="Close menu overlay"
             onClick={closeMenu}
-            className="fixed inset-0 z-40 bg-black/40 md:hidden"
+            className="fixed inset-0 z-40 bg-[var(--overlay)] md:hidden"
           />
 
           <div className="fixed inset-x-4 top-20 z-50 rounded-2xl border border-[var(--border)] bg-[var(--surface)]/95 p-6 shadow-2xl backdrop-blur-xl md:hidden">

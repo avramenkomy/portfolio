@@ -18,11 +18,15 @@ html[data-theme='dark'] {
   --card-hover: var(--surface-hover);
   --accent: var(--primary);
   --accent-hover: var(--primary-hover);
+  --accent-glow: rgb(59 130 246 / 0.4);
+  --accent-foreground: #ffffff;
   --muted-foreground: var(--muted);
   --muted-surface: #111113;
 
   --code-background: #020617;
   --code-foreground: #e2e8f0;
+
+  --overlay: rgb(0 0 0 / 0.4);
 
   --radius-sm: 8px;
   --radius-md: 12px;
@@ -50,11 +54,15 @@ html[data-theme='light'] {
   --card-hover: var(--surface-hover);
   --accent: var(--primary);
   --accent-hover: var(--primary-hover);
+  --accent-glow: rgb(37 99 235 / 0.12);
+  --accent-foreground: #ffffff;
   --muted-foreground: var(--muted);
   --muted-surface: #f1f5f9;
 
   --code-background: #0f172a;
   --code-foreground: #e2e8f0;
+
+  --overlay: rgb(15 23 42 / 0.25);
 
   color-scheme: light;
 }
