@@ -14,15 +14,15 @@ export default function NotFound() {
           <div className="pointer-events-none absolute left-1/2 top-0 h-64 w-64 -translate-x-1/2 rounded-full bg-[var(--accent)]/20 blur-3xl" />
 
           <div className="relative z-10">
-            <p className="text-sm font-medium uppercase tracking-[0.3em] text-[var(--accent)]">
+            <p className="text-sm font-medium uppercase tracking-[0.3em] text-(--accent)">
               404
             </p>
 
-            <h1 className="mt-4 text-4xl font-bold tracking-tight text-[var(--foreground)] sm:text-5xl">
+            <h1 className="mt-4 text-4xl font-bold tracking-tight text-(--foreground) sm:text-5xl">
               Page not found
             </h1>
 
-            <p className="mx-auto mt-6 max-w-2xl leading-8 text-[var(--muted-foreground)]">
+            <p className="mx-auto mt-6 max-w-2xl leading-8 text-(--muted-foreground)">
               The page you are looking for does not exist or has been moved.
             </p>
 
