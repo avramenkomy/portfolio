@@ -7,13 +7,13 @@ import navigation from '@/data/navigation';
 export default function Header() {
   return (
     <header
-      className="fixed inset-x-0 top-0 z-9999 isolate border-b border-[var(--border)] bg-[var(--surface)]/95 text-[var(--foreground)] backdrop-blur-xl"
+      className="fixed inset-x-0 top-0 z-9999 isolate border-b border-(--border) bg-(--surface)/95 text-(--foreground) backdrop-blur-xl"
     >
       <div className="container relative z-10000 flex h-16 items-center justify-between">
 
         <Link
           href="/"
-          className="text-lg font-bold tracking-tight text-[var(--foreground)] transition hover:text-[var(--accent)]"
+          className="text-lg font-bold tracking-tight text-(--foreground) transition hover:text-(--accent)"
         >
           Mikhail
         </Link>
@@ -25,7 +25,7 @@ export default function Header() {
                 <li key={item.href}>
                   <Link
                     href={item.href}
-                    className="text-sm font-medium text-[var(--muted-foreground)] transition hover:text-[var(--foreground)]"
+                    className="text-sm font-medium text-(--muted-foreground) transition hover:text-(--foreground)"
                   >
                     {item.title}
                   </Link>
